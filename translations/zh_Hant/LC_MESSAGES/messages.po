@@ -614,14 +614,6 @@ msgstr "根據您的歌曲播放歷史"
 msgid "Recommendation for today"
 msgstr "今天的推薦"
 
-#: templates/index.html:561
-msgid "Featured Tracks from Your Region"
-msgstr "您所在區域的精選曲目"
-
-#: templates/index.html:563
-msgid "Popular Playlist"
-msgstr "熱門播放列表"
-
 #: templates/index.html:583
 msgid "Top 50 Global Hits"
 msgstr "全球前50首熱門歌曲"

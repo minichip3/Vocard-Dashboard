@@ -6,7 +6,7 @@ __version__ = "v2.0"
 
 GITHUB_API_URL = "https://api.github.com/repos/ChocoMeow/Vocard-Dashboard/releases/latest"
 VOCARD_DASHBOARD_URL = "https://github.com/ChocoMeow/Vocard-Dashboard/archive/"
-IGNORE_FILES = ["settings.json", "logs", "last-session.json"]
+IGNORE_FILES = ["settings.json", "logs"]
 
 class bcolors:
     WARNING = '\033[93m'

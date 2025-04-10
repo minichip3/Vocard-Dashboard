@@ -2156,55 +2156,13 @@ $(document).ready(function () {
     }
 
     function buildExplorePage() {
-        if ($("#featured-playlists").has(".skeleton").length) {
+        if ($("#global-top-tracks").has(".skeleton").length) {
             player.send({
-                op: "getFeaturedPlaylists",
-                callback: "featured-playlists",
-                locale: "sv_SE",
-                limit: 40,
+                op: "getTracks",
+                query: "https://open.spotify.com/playlist/37i9dQZEVXbMDoHDwVN2tF",
+                callback: "global-top-tracks",
             });
         }
-
-        setTimeout(() => {
-            if ($("#global-top-tracks").has(".skeleton").length) {
-                player.send({
-                    op: "getTracks",
-                    query: "https://open.spotify.com/playlist/37i9dQZEVXbMDoHDwVN2tF",
-                    callback: "global-top-tracks",
-                });
-            }
-        }, 2000);
-        // if ($('#category-playlists').has('.skeleton').length) {
-        //     player.send({ "op": "getCategoryPlaylists", "callback": "category-playlists" });
-        // }
         changePage("explore-page", true, false);
     }
-
-    // let resizeTimer;
-    // $(".main-container").on("resize", function () {
-    //     clearTimeout(resizeTimer);
-    //     resizeTimer = setTimeout(() => {
-    //         const width = $(window).width();
-
-    //         if (width < 700) {
-    //             // Always hide the menu on smaller screens
-    //             $(".menu-container").addClass("hide");
-    //         } else {
-    //             // On larger screens, reveal the menu if the localStorage flag indicates so
-    //             if (localStorage.getItem("menuView") === "false") {
-    //                 $(".menu-container").removeClass("hide");
-    //             }
-    //         }
-
-    //         if (width < 400) {
-    //             // On very small screens, always close the queue
-    //             $(".queue-container").addClass("close");
-    //         } else {
-    //             // Between 1100 and 1323 pixels, open the queue if user preference is set
-    //             if (localStorage.getItem("queueView") === "true") {
-    //                 $(".queue-container").removeClass("close");
-    //             }
-    //         }
-    //     }, 50);
-    // });
 });
