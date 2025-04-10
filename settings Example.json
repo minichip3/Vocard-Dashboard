@@ -1,11 +1,11 @@
 {
     "host": "localhost",
-    "port": "8080",
+    "port": "8000",
     "password": "",
     "client_id": "",
     "client_secret_id": "",
     "secret_key": "",
-    "redirect_url": "http://127.0.0.1:8080/callback",
+    "redirect_url": "http://127.0.0.1:8000/callback",
     "logging": {
         "file": {
             "path": "./logs",
