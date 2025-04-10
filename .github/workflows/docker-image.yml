@@ -25,5 +25,5 @@ jobs:
 
     - name: Push the Docker image
       run: |
-        docker tag vocard:latest ghcr.io/chocomeow/vocard-dashboard:latest  # Ensure lowercase
+        docker tag vocard-dashboard:latest ghcr.io/chocomeow/vocard-dashboard:latest  # Ensure lowercase
         docker push ghcr.io/chocomeow/vocard-dashboard:latest  # Ensure lowercases
