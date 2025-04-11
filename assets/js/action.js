@@ -1470,12 +1470,13 @@ $(document).ready(function () {
             if (!player.availableFilters.length) return;
 
             let effectName = $target.closest(".option").data("id");
-            if (!effectName) {
+            if (effectName === "none") {
                 player.send({ op: "updateFilter", type: "reset" });
             } else {
+                const $option = $target.closest(".option");
                 player.send({
                     op: "updateFilter",
-                    type: $(this).hasClass("active") ? "remove" : "add",
+                    type: $option.hasClass("active") ? "remove" : "add",
                     tag: effectName,
                 });
             }

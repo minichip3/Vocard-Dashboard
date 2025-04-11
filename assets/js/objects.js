@@ -958,7 +958,7 @@ const methods = {
                 }
                 player.tm.showToast(
                     data["requesterId"],
-                    formatString(localeTexts.effects.add, data.filter.text)
+                    formatString(localeTexts.effects.add, data.filter.tag)
                 );
             } else if (data?.type == "remove") {
                 if (index !== -1) {
@@ -967,7 +967,7 @@ const methods = {
                         data["requesterId"],
                         formatString(
                             localeTexts.effects.remove,
-                            data.filter.text
+                            data.filter.tag
                         )
                     );
                 }
@@ -1205,12 +1205,6 @@ class Player {
                     <h4>${localeTexts.effects.header}</h4>
                     <p>${localeTexts.effects.description}</p>
                 </div>
-                <label class="switch">
-                    <input data-id="" type="checkbox" ${
-                        isEnabled ? "checked" : ""
-                    }>
-                    <span class="switch-slider"></span>
-                </label>
             </div>
 
             <div class="options">${options}</div>
