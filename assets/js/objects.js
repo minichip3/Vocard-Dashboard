@@ -172,15 +172,15 @@ class Track {
         this.author = object.author;
         this.source = object.source;
         this.identifier = object.identifier;
-        if (object.thumbnail == undefined) {
+        if (object.artworkUrl == undefined) {
             if (this.source == "youtube") {
-                this.imageUrl = `https://img.youtube.com/vi/${this.identifier}/hqdefault.jpg`;
+                this.artworkUrl = `https://img.youtube.com/vi/${this.identifier}/hqdefault.jpg`;
             } else {
-                this.imageUrl =
+                this.artworkUrl =
                     "https://cdn.discordapp.com/attachments/674788144931012638/823086668445384704/eq-dribbble.gif";
             }
         } else {
-            this.imageUrl = object.thumbnail;
+            this.artworkUrl = object.artworkUrl;
         }
         this.isStream = object.isStream;
         this.length = Number(object.length);
@@ -443,7 +443,7 @@ const methods = {
                     <div class="track-row">
                         <div class="left">
                             <img src="${
-                                track.imageUrl
+                                track.artworkUrl
                             }" onerror="this.src='/static/img/notFound.png'" alt="">
                             <div class="track-info">
                                 <p class="title">${track.title}</p>
@@ -1264,9 +1264,9 @@ class Player {
             "disabled",
             this.currentTrack?.isStream ? "disabled" : false
         );
-
-        this.updateImage("#controller-img", this.currentTrack?.imageUrl);
-        this.updateImage("#now-playing-img", this.currentTrack?.imageUrl);
+        
+        this.updateImage("#controller-img", this.currentTrack?.artworkUrl);
+        this.updateImage("#now-playing-img", this.currentTrack?.artworkUrl);
         this.updateImage(
             "#now-playing-requester-img",
             this.currentTrack?.requester.avatarUrl
@@ -1433,10 +1433,10 @@ class Player {
             : $("#repeat-btn").addClass("active");
     }
 
-    updateImage(selector, imageUrl) {
-        if (imageUrl) {
+    updateImage(selector, artworkUrl) {
+        if (artworkUrl) {
             $(selector).fadeIn(200, function () {
-                $(this).attr("src", imageUrl);
+                $(this).attr("src", artworkUrl);
             });
         } else {
             $(selector).fadeOut(200, function () {
