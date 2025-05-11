@@ -149,7 +149,7 @@ class ToastManager {
             avatarUrl = `/static/img/${userId}.png`;
             type = userId;
         } else {
-            avatarUrl = this.player.users[userId]?.avatarUrl;
+            avatarUrl = this.player.users[userId]?.avatarUrl || '/static/img/notFound.png';
             type = "success";
         }
 
@@ -1269,7 +1269,7 @@ class Player {
         this.updateImage("#now-playing-img", this.currentTrack?.artworkUrl);
         this.updateImage(
             "#now-playing-requester-img",
-            this.currentTrack?.requester.avatarUrl
+            this.currentTrack?.requester?.avatarUrl || '/static/img/notFound.png'
         );
 
         const colorThief = new ColorThief();
