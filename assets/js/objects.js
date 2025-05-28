@@ -1406,7 +1406,6 @@ class Player {
                     ? "∞"
                     : msToReadableTime(currentTrack.length)
                 : "00:00",
-            "#auto-play": this.autoplay || false,
             "#play-pause-btn":
                 this.isPaused || !currentTrack ? "play_circle" : "pause_circle",
             "#repeat-btn": this.repeat == "track" ? "repeat_one" : "repeat",
@@ -1419,6 +1418,8 @@ class Player {
                 $element.text(newValue);
             }
         });
+
+        $("#autoplay-btn").toggleClass("active", this.autoplay)
 
         if (this.isPaused || !currentTrack) {
             this.timer.stop();
