@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-01-29 11:15+0800\n"
+"POT-Creation-Date: 2025-05-29 09:41+0800\n"
 "PO-Revision-Date: 2025-01-11 11:25+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hant_HK\n"
@@ -142,7 +142,7 @@ msgstr "你無法選擇這個機械人！"
 msgid "You need to connect a bot in order to perform this action."
 msgstr "您需要連接一個機械人才能執行此操作。"
 
-#: templates/index.html:82 templates/index.html:313
+#: templates/index.html:82 templates/index.html:315
 msgid "No message for you at this time."
 msgstr "目前沒有消息。"
 
@@ -210,7 +210,7 @@ msgstr "分享"
 msgid "link"
 msgstr "鏈接"
 
-#: templates/index.html:110 templates/index.html:375
+#: templates/index.html:110 templates/index.html:377
 msgid "Create Playlist"
 msgstr "創建播放清單"
 
@@ -294,7 +294,7 @@ msgstr "機器人前綴"
 msgid "Change the default prefix for message commands."
 msgstr "更改消息命令的預設前綴。"
 
-#: templates/index.html:150 templates/index.html:637
+#: templates/index.html:150 templates/index.html:616
 msgid "Language"
 msgstr "語言"
 
@@ -488,49 +488,49 @@ msgstr "搜索您的輸入並將其添加到隊列中"
 msgid "Add All"
 msgstr "全部添加"
 
-#: templates/index.html:300 templates/index.html:307
+#: templates/index.html:302 templates/index.html:309
 msgid "Inbox"
 msgstr "收件匣"
 
-#: templates/index.html:348
+#: templates/index.html:350
 msgid "Home"
 msgstr "首頁"
 
-#: templates/index.html:355
+#: templates/index.html:357
 msgid "Explore"
 msgstr "探索"
 
-#: templates/index.html:362
+#: templates/index.html:364
 msgid "Server"
 msgstr "伺服器"
 
-#: templates/index.html:385
+#: templates/index.html:387
 msgid "Light Mode"
 msgstr "淺色模式"
 
-#: templates/index.html:391 templates/index.html:632
+#: templates/index.html:393 templates/index.html:611
 msgid "Settings"
 msgstr "設置"
 
-#: templates/index.html:401
+#: templates/index.html:403
 msgid "Help"
 msgstr "幫助"
 
-#: templates/index.html:409
+#: templates/index.html:411
 msgid "Logout"
 msgstr "登出"
 
-#: templates/index.html:420
+#: templates/index.html:422
 msgid ""
 "Some errors occurred and the dashboard could not\n"
 "                        be connected"
 msgstr "發生一些錯誤，儀表板無法連接"
 
-#: templates/index.html:430
+#: templates/index.html:432
 msgid "Can't Find You on Discord"
 msgstr "在 Discord 上找不到您"
 
-#: templates/index.html:432
+#: templates/index.html:434
 msgid ""
 "I'm unable to locate you in any Discord\n"
 "                            server. Please check that you've invited our "
@@ -540,15 +540,15 @@ msgid ""
 "                            server information."
 msgstr "我無法在任何 Discord 伺服器中找到您。請檢查您是否已邀請我們的機器人並授予其訪問您伺服器信息的必要權限。"
 
-#: templates/index.html:440 templates/index.html:508
+#: templates/index.html:442 templates/index.html:510
 msgid "Reload Page"
 msgstr "重新載入頁面"
 
-#: templates/index.html:450
+#: templates/index.html:452
 msgid "No Hisotry Searches Found"
 msgstr "未找到歷史搜索"
 
-#: templates/index.html:452
+#: templates/index.html:454
 msgid ""
 "It seems like you haven’t searched for any\n"
 "                            songs yet. No worries, your musical journey "
@@ -558,15 +558,15 @@ msgid ""
 "                            favorite song or artist in the search bar."
 msgstr "看起來您還沒有搜索任何歌曲。別擔心，您的音樂之旅可以立即開始！只需在搜索欄中輸入您最喜愛的歌曲或藝術家的名稱。"
 
-#: templates/index.html:459
+#: templates/index.html:461
 msgid "Search Now"
 msgstr "立即搜索"
 
-#: templates/index.html:468
+#: templates/index.html:470
 msgid "Server Not Detected"
 msgstr "未檢測到伺服器"
 
-#: templates/index.html:470
+#: templates/index.html:472
 msgid ""
 "Ensure that I’m added to your server. Please\n"
 "                            note, you must possess ‘Manage Guild’ "
@@ -574,25 +574,25 @@ msgid ""
 "                            the server you wish to manage."
 msgstr "確保我已被添加到您的伺服器。請注意，您必須擁有要管理的伺服器的「管理公會」權限。"
 
-#: templates/index.html:476
+#: templates/index.html:478
 msgid "Refresh page"
 msgstr "重新載入頁面"
 
-#: templates/index.html:485
+#: templates/index.html:487
 msgid "Lyrics Not Found"
 msgstr "找不到歌詞"
 
-#: templates/index.html:487
+#: templates/index.html:489
 msgid ""
 "Sorry, but I’m unable to search for the lyrics\n"
 "                            of this song. Please try searching online."
 msgstr "抱歉，我無法搜索這首歌的歌詞。請嘗試在線搜索。"
 
-#: templates/index.html:498
+#: templates/index.html:500
 msgid "Temporary Access Limit Reached"
 msgstr "已達到臨時訪問限制"
 
-#: templates/index.html:500
+#: templates/index.html:502
 msgid ""
 "It appears you’ve been quite active and have\n"
 "                            reached the limit for requests. Don’t worry, "
@@ -602,119 +602,123 @@ msgid ""
 "                            activities after a short break."
 msgstr "看起來您非常活躍，已達到請求的限制。別擔心，這只是暫時的。您可以在短暫休息後繼續您的活動。"
 
-#: templates/index.html:516
+#: templates/index.html:518
 msgid "Recently played"
 msgstr "最近播放"
 
-#: templates/index.html:537
+#: templates/index.html:539
 msgid "Based on your song playback history"
 msgstr "根據您的歌曲播放歷史"
 
-#: templates/index.html:540
+#: templates/index.html:542
 msgid "Recommendation for today"
 msgstr "今天的推薦"
 
-#: templates/index.html:583
+#: templates/index.html:562
 msgid "Top 50 Global Hits"
 msgstr "全球前50首熱門歌曲"
 
-#: templates/index.html:584
+#: templates/index.html:563
 msgid "Trending Songs"
 msgstr "熱門歌曲"
 
-#: templates/index.html:604
+#: templates/index.html:583
 msgid "Discover music for every mood"
 msgstr "為每種心情發現音樂"
 
-#: templates/index.html:605
+#: templates/index.html:584
 msgid "Genres and Moods"
 msgstr "類型和心情"
 
-#: templates/index.html:629
+#: templates/index.html:608
 msgid ""
 "Manage your account settings and\n"
 "                                    preferences"
 msgstr "管理您的帳戶設置和偏好"
 
-#: templates/index.html:670
+#: templates/index.html:649
 msgid "Dark Mode"
 msgstr "夜間模式"
 
-#: templates/index.html:672
+#: templates/index.html:651
 msgid ""
 "Quickly toggle between light and\n"
 "                                        dark modes for a personalized."
 msgstr "快速切換光明模式和黑暗模式，為您提供個性化體驗。"
 
-#: templates/index.html:723 templates/index.html:928
+#: templates/index.html:703 templates/index.html:911
 msgid "Queue"
 msgstr "隊列"
 
-#: templates/index.html:731
+#: templates/index.html:711
 msgid "Toggle History"
 msgstr "切換歷史"
 
-#: templates/index.html:739
+#: templates/index.html:719
 msgid "Close"
 msgstr "關閉"
 
-#: templates/index.html:750
+#: templates/index.html:730
 msgid "Now playing"
 msgstr "現在播放"
 
-#: templates/index.html:787
+#: templates/index.html:767
 msgid "Next in queue"
 msgstr "即將播放"
 
-#: templates/index.html:788
+#: templates/index.html:768
 msgid "Clear queue"
 msgstr "清除隊列"
 
-#: templates/index.html:798
+#: templates/index.html:778
 msgid "History queue"
 msgstr "歷史隊列"
 
-#: templates/index.html:800
+#: templates/index.html:780
 msgid "Clear history"
 msgstr "清除歷史"
 
-#: templates/index.html:809
+#: templates/index.html:789
 msgid "BACK TO TOP"
 msgstr "返回頂部"
 
-#: templates/index.html:834
+#: templates/index.html:793
+msgid "Autoplay"
+msgstr "自動播放"
+
+#: templates/index.html:817
 msgid "Rewind 10s"
 msgstr "倒退10秒"
 
-#: templates/index.html:842
+#: templates/index.html:825
 msgid "Shuffle"
 msgstr "隨機播放"
 
-#: templates/index.html:850
+#: templates/index.html:833
 msgid "Back"
 msgstr "返回"
 
-#: templates/index.html:858
+#: templates/index.html:841
 msgid "Play"
 msgstr "播放"
 
-#: templates/index.html:866
+#: templates/index.html:849
 msgid "Skip"
 msgstr "跳過"
 
-#: templates/index.html:874
+#: templates/index.html:857
 msgid "Repeat"
 msgstr "重複"
 
-#: templates/index.html:882
+#: templates/index.html:865
 msgid "Forward 10s"
 msgstr "快進10秒"
 
-#: templates/index.html:911
+#: templates/index.html:894
 msgid "Volume"
 msgstr "音量"
 
-#: templates/index.html:920
+#: templates/index.html:903
 msgid "Effect"
 msgstr "效果"
 
