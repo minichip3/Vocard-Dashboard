@@ -109,22 +109,22 @@ function changePage(page, stack = false, removeAfterPop = true) {
     }
 
     if (["main-page", "no-history-found"].includes(page)) {
-        $searchContainer.fadeOut(300);
+        // $searchContainer.fadeOut(300);
         $backMainBtn.fadeOut(350, () => {
-            $searchContainer.fadeIn(300);
+            // $searchContainer.fadeIn(300);
             $headerBtn.fadeIn(400);
         });
     } else if (["bot-not-found", "rate-limited"].includes(page)) {
-        $searchContainer.fadeOut(300);
+        // $searchContainer.fadeOut(300);
         $backMainBtn.fadeOut(300);
         $headerBtn.fadeOut(350);
     } else {
         if ($backMainBtn.css("display") === "none") {
-            $searchContainer.fadeOut(300, () => {
-                $backMainBtn.fadeIn(300);
-                $searchContainer.fadeIn(350);
-                $headerBtn.fadeIn(400);
-            });
+            $backMainBtn.fadeIn(300);
+            $headerBtn.fadeIn(400);
+            // $searchContainer.fadeOut(300, () => {
+            //     $searchContainer.fadeIn(350);
+            // });
         }
     }
 
@@ -718,7 +718,7 @@ $(document).ready(function () {
                 "background",
                 `linear-gradient(to right, var(--primary) ${
                     progress * 100
-                }%, var(--sub-text) ${progress * 100}%)`
+                }%, var(--text-muted) ${progress * 100}%)`
             );
             player.startTime.text(
                 msToReadableTime(progress * player.currentTrack?.length)
@@ -730,7 +730,7 @@ $(document).ready(function () {
         let progress = $(this).val();
         $(this).css(
             "background",
-            `linear-gradient(to right, var(--primary) ${progress}%, var(--sub-text) ${progress}%)`
+            `linear-gradient(to right, var(--primary) ${progress}%, var(--text-muted) ${progress}%)`
         );
     });
 
@@ -768,13 +768,6 @@ $(document).ready(function () {
 
         const $menuContainer = $target.closest(".menu-container");
         if ($menuContainer.length) {
-            if ($target.closest("#close-menu").length) {
-                $menuContainer.toggleClass("hide");
-
-                var isMenuHidden = $menuContainer.hasClass("hide");
-                return localStorage.setItem("menuView", isMenuHidden);
-            }
-
             if ($target.closest(".bot-selection").length) {
                 const $bot = $target.closest(".option");
                 if ($bot.length) {
@@ -1081,8 +1074,14 @@ $(document).ready(function () {
         if ($btn.length) {
             let btnName = $btn.attr("id").replace("-btn", "");
             let currentTrack = player.currentTrack;
-
+            console.log(btnName);
             switch (btnName) {
+                case "menu-bar":
+                    let $menuContainer = $(".menu-container");
+                    $menuContainer.toggleClass("hide");
+                    localStorage.setItem("menuView", $menuContainer.hasClass("hide"));
+                    break;
+
                 case "back-page":
                     backToLastPage();
                     break;
