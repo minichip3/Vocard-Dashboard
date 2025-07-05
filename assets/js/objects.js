@@ -1390,7 +1390,7 @@ class Player {
         bar.val(time);
         bar.css(
             "background",
-            `linear-gradient(to right, var(--primary) ${progress}%, var(--sub-text) ${progress}%)`
+            `linear-gradient(to right, var(--primary) ${progress}%, var(--text-muted) ${progress}%)`
         );
     }
 
