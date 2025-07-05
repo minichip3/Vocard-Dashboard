@@ -536,7 +536,7 @@ msgid "Reload Page"
 msgstr "重新載入頁面"
 
 #: templates/index.html:319
-msgid "No Hisotry Searches Found"
+msgid "No History Searches Found"
 msgstr "未找到歷史搜索"
 
 #: templates/index.html:321

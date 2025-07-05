@@ -567,7 +567,7 @@ msgid "Reload Page"
 msgstr "Recharger la page"
 
 #: templates/index.html:319
-msgid "No Hisotry Searches Found"
+msgid "No History Searches Found"
 msgstr "Aucune recherche récente trouvée"
 
 #: templates/index.html:321
