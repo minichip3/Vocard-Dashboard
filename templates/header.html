@@ -25,7 +25,7 @@
         </div>
     </div>
 
-    <div class="avatar-container" id="channel-members"></div>
+    <div class="avatar-container non-essential" id="channel-members"></div>
 
     <div class="header-btn">
         <div class="btn" id="toggle-inbox-panel">
@@ -46,8 +46,17 @@
         </div>
     </div>
 
-    <div class="user-avatar">
-        <img src="{{ user.avatar.url }}" alt />
+    <div class="user-menu-container">
+        <div class="user-avatar" id="toggle-user-menu">
+            <img src="{{ user.avatar.url }}" alt />
+        </div>
+        <div class="panel user-menu-panel" id="user-menu">
+            <ul>
+                <li id="load-settings-page-btn"><a href="#"><span class="material-symbols-outlined">settings</span>{{ _("Settings") }}</a></li>
+                <li><a href="https://discord.gg/wRCgB7vBQv" target="_blank"><span class="material-symbols-outlined">help</span>{{ _("Help") }}</a></li>
+                <li><a href="logout" class="logout-link"><span class="material-symbols-outlined">logout</span>{{ _("Logout") }}</a></li>
+            </ul>
+        </div>
     </div>
 </div>
 {% endblock %}

@@ -94,11 +94,6 @@
         flex-direction: column;
         gap: 0.75rem;
     }
-    .botton {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
     .bar {
         background-color: var(--bg-light);
         padding: 0.0625rem;
@@ -193,4 +188,36 @@
     .no-icon {
         display: none;
     }
+}
+@media (max-width: 768px) {
+  .menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80vw;
+    max-width: 320px;
+    height: 100vh;
+    z-index: 1002;
+    background: var(--bg);
+    box-shadow: 2px 0 16px rgba(0,0,0,0.15);
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+    border-right: none;
+    &.active {
+      transform: translateX(0);
+    }
+  }
+  #menu-overlay.mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.3);
+    z-index: 1001;
+  }
+  .menu-container.active + #menu-overlay.mobile-overlay {
+    display: block;
+  }
 }

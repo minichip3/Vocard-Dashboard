@@ -87,17 +87,25 @@ function updatePrimaryColor(color) {
 
 function toggleQueueView(init = false) {
     const container = $(".queue-container");
+    if (window.matchMedia('(max-width: 768px)').matches) {
+        container.toggleClass('active');
+        if (container.hasClass('active')) {
+            $('#queue-overlay').show();
+        } else {
+            $('#queue-overlay').hide();
+        }
+        return;
+    }
+    // On desktop, use .close
     const isClose = container.hasClass("close");
     $("#toggle-queue-view").toggleClass("active", isClose);
     container.toggleClass("close");
-
     if (!init) {
         localStorage.setItem("queueView", isClose);
     }
 }
 
 function changePage(page, stack = false, removeAfterPop = true) {
-    const $searchContainer = $(".search-container");
     const $backMainBtn = $(".back-page-btn");
     const $headerBtn = $(".header-btn");
     const $visibleSection = $(".main-container").find(".sections:visible");
@@ -109,22 +117,16 @@ function changePage(page, stack = false, removeAfterPop = true) {
     }
 
     if (["main-page", "no-history-found"].includes(page)) {
-        // $searchContainer.fadeOut(300);
         $backMainBtn.fadeOut(350, () => {
-            // $searchContainer.fadeIn(300);
             $headerBtn.fadeIn(400);
         });
     } else if (["bot-not-found", "rate-limited"].includes(page)) {
-        // $searchContainer.fadeOut(300);
         $backMainBtn.fadeOut(300);
         $headerBtn.fadeOut(350);
     } else {
         if ($backMainBtn.css("display") === "none") {
             $backMainBtn.fadeIn(300);
             $headerBtn.fadeIn(400);
-            // $searchContainer.fadeOut(300, () => {
-            //     $searchContainer.fadeIn(350);
-            // });
         }
     }
 
@@ -749,7 +751,7 @@ $(document).ready(function () {
         $(".search-result").fadeOut();
         removeContextMenu();
 
-        const panels = ["effect-panel", "inbox-panel"];
+        const panels = ["effect-panel", "inbox-panel", "user-menu"];
         panels.forEach((panelId) => {
             if (
                 !$target.closest(`#${panelId}`).length &&
@@ -782,7 +784,7 @@ $(document).ready(function () {
                 if (pageName == "settings-page") {
                     return build_server_page();
                 }
-
+                
                 if (pageName == "explore-page") {
                     return buildExplorePage();
                 }
@@ -1160,8 +1162,14 @@ $(document).ready(function () {
                 case "autoplay":
                     const status = !player.autoplay
                     player.send({ op: "toggleAutoplay", status })
+                    break;
+
+                case "load-settings-page":
+                    changePage("user-settings-page");
+                    break;
+
                 default:
-                    return;
+                    break;
             }
             return;
         }
@@ -2169,4 +2177,85 @@ $(document).ready(function () {
         }
         changePage("explore-page", true, false);
     }
+
+    // --- Mobile Overlay Logic for Menu and Queue ---
+    function isMobile() {
+        return window.matchMedia('(max-width: 768px)').matches;
+    }
+
+    function closeAllOverlays() {
+        $('.menu-container').removeClass('hide')
+        $('.menu-container').removeClass('active');
+        $('#menu-overlay').hide();
+        $('.queue-container').removeClass('close');
+        $('.queue-container').removeClass('active');
+        $('#queue-overlay').hide();
+    }
+
+    // Initially close overlays on mobile
+    if (isMobile()) {
+        $('.menu-container').removeClass('hide')
+        $('.menu-container').removeClass('active');
+        $('#menu-overlay').hide();
+        $('.queue-container').removeClass('close');
+        $('.queue-container').removeClass('active');
+        $('#queue-overlay').hide();
+    }
+
+    // Menu toggle button (header menu button)
+    $('#menu-bar-btn').on('click', function (e) {
+        if (isMobile()) {
+            e.stopPropagation();
+            closeAllOverlays();
+            $('.menu-container').addClass('active');
+            $('#menu-overlay').show();
+        }
+    });
+
+    $('.menu-container').on('click', '.menu-btn', function() {
+        if (isMobile()) {
+            closeAllOverlays();
+        }
+    });
+    
+    // Queue toggle button (controller queue button)
+    $('#toggle-queue-view').on('click', function (e) {
+        if (isMobile()) {
+            e.stopPropagation();
+            closeAllOverlays();
+            $('.queue-container').addClass('active');
+            $('#queue-overlay').show();
+        }
+    });
+
+    // Clicking outside menu/queue closes overlays
+    $(document).on('click touchstart', function (e) {
+        if (!isMobile()) return;
+        const $target = $(e.target);
+        
+        // Close menu if clicking outside of menu and its toggle button, and menu is active
+        if (
+            !$target.closest('.menu-container').length &&
+            !$target.closest('#menu-bar-btn').length &&
+            $('.menu-container').hasClass('active')
+        ) {
+            closeAllOverlays();
+        }
+
+        // Close queue if clicking outside of queue and its toggle button, and queue is active
+        if (
+            !$target.closest('.queue-container').length &&
+            !$target.closest('#toggle-queue-view').length &&
+            $('.queue-container').hasClass('active')
+        ) {
+            closeAllOverlays();
+        }
+    });
+
+    // On resize, close overlays if switching between mobile/desktop
+    $(window).on('resize', function () {
+        if (!isMobile()) {
+            closeAllOverlays();
+        }
+    });
 });
