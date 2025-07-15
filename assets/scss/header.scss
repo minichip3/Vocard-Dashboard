@@ -354,13 +354,6 @@
     }
 }
 
-.avatar-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: auto;
-}
-
 .user-avatar {
     display: flex;
     align-items: center;
@@ -459,6 +452,17 @@
 
         .search-bar {
             max-width: 20rem;
+
+            .search-result {
+                position: fixed;
+                top: 3.5rem;
+                left: 0;
+                width: 100vw;
+                height: 70vh;
+                max-height: 100vh;
+                z-index: 1003;
+                border-radius: 0;
+            }
         }
     }
 
@@ -467,8 +471,17 @@
         min-width: 8rem;
     }
 
-    .avatar-container.non-essential {
-        display: none;
+    .header-btn {
+        .panel {
+            position: fixed;
+            top: 3.5rem;
+            left: 0;
+            width: 100vw;
+            height: 50vh;
+            max-height: 100vh;
+            z-index: 1003;
+            border-radius: 0;
+        }
     }
 }
 
@@ -492,10 +505,6 @@
 
     .menu-bar-btn {
         order: 1;
-    }
-
-    .avatar-container {
-        order: 2;
     }
 
     .header-btn {

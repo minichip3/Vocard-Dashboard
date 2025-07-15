@@ -125,7 +125,9 @@ function changePage(page, stack = false, removeAfterPop = true) {
         $headerBtn.fadeOut(350);
     } else {
         if ($backMainBtn.css("display") === "none") {
-            $backMainBtn.fadeIn(300);
+            $backMainBtn.fadeIn(300, function() {
+                $backMainBtn.css("display", "flex");
+            });
             $headerBtn.fadeIn(400);
         }
     }
