@@ -125,7 +125,7 @@ function changePage(page, stack = false, removeAfterPop = true) {
         $headerBtn.fadeOut(350);
     } else {
         if ($backMainBtn.css("display") === "none") {
-            $backMainBtn.fadeIn(300, function() {
+            $backMainBtn.fadeIn(300, function () {
                 $backMainBtn.css("display", "flex");
             });
             $headerBtn.fadeIn(400);
@@ -201,47 +201,39 @@ function buildPlaylistHtml(dataId, playlist, type) {
 
     // Main playlist page HTML
     return (playlistPageHtml = `
-        <div class="sections" id="playlist-page-${dataId}" data-id="${dataId}" data-type="${type}" data-href="${
-        playlist.href
-    }">
+        <div class="sections" id="playlist-page-${dataId}" data-id="${dataId}" data-type="${type}" data-href="${playlist.href
+        }">
             <div class="section">
                 <div class="track-header">
                     <div class="left">
                         ${buildPlaylistImage()}
                         <div class="track-info">
-                            <p class="small ${
-                                playlist?.type ? "" : "skeleton"
-                            }">${
-        playlist?.type
+                            <p class="small ${playlist?.type ? "" : "skeleton"
+        }">${playlist?.type
             ? capitalize(localeTexts.playlist.type[playlist.type])
             : ""
-    }</p>
-                            <h1 class="large ${
-                                playlist?.name ? "" : "skeleton"
-                            }">${playlist?.name || ""}</h1>
-                            <p class="middle ${
-                                playlist?.tracks ? "" : "skeleton"
-                            }">
-                                ${
-                                    playlist?.tracks
-                                        ? `${
-                                              playlist.tracks.length
-                                          }&nbsp;Songs • ${msToReadableTime(
-                                              totalTime
-                                          )}`
-                                        : ""
-                                }
+        }</p>
+                            <h1 class="large ${playlist?.name ? "" : "skeleton"
+        }">${playlist?.name || ""}</h1>
+                            <p class="middle ${playlist?.tracks ? "" : "skeleton"
+        }">
+                                ${playlist?.tracks
+            ? `${playlist.tracks.length
+            }&nbsp;Songs • ${msToReadableTime(
+                totalTime
+            )}`
+            : ""
+        }
                             </p>
                         </div>
                     </div>
-                    ${
-                        playlist?.tracks
-                            ? `<div class="actions">
+                    ${playlist?.tracks
+            ? `<div class="actions">
                                 <span class="material-symbols-outlined filled clickable large playlist-play">play_circle</span>
                                 <span class="material-symbols-outlined clickable middle playlist-more">more_horiz</span>
                             </div>`
-                            : ""
-                    }
+            : ""
+        }
                 </div>
             </div>
 
@@ -257,9 +249,8 @@ function buildTrackRowHtml(index, track) {
     return `<div class="track-row" data-id="${track.trackId}">
         <div class="left">
             <span>${index}</span>
-            <img src="${
-                track.artworkUrl
-            }" onerror="this.src='/static/img/notFound.png'" alt="">
+            <img src="${track.artworkUrl
+        }" onerror="this.src='/static/img/notFound.png'" alt="">
             <div class="track-info">
                 <p class="title">${track.title}</p>
                 <p class="description">${track.author}</p>
@@ -328,8 +319,7 @@ function buildLyricHtml(pageId, data) {
             return Object.entries(lyrics)
                 .map(
                     ([key], index) =>
-                        `<div class="option ${
-                            index === 0 ? "active" : ""
+                        `<div class="option ${index === 0 ? "active" : ""
                         }">${key}</div>`
                 )
                 .join("");
@@ -382,11 +372,9 @@ function buildSettingPageHtml(guildId, data) {
 
         switch (fieldData.inputType) {
             case "text":
-                sectionHtml = `<input data-id="${key}" class="text-input" type="text" placeholder="${
-                    fieldData?.placeholder
-                }" value="${fieldData.default || ""}" maxlength="${
-                    fieldData.maxLength
-                }">`;
+                sectionHtml = `<input data-id="${key}" class="text-input" type="text" placeholder="${fieldData?.placeholder
+                    }" value="${fieldData.default || ""}" maxlength="${fieldData.maxLength
+                    }">`;
                 break;
 
             case "dropdown":
@@ -397,8 +385,8 @@ function buildSettingPageHtml(guildId, data) {
                     </div>
                     <div class="options">
                         ${fieldData.options
-                            .map((option) => `<p class="option">${option}</p>`)
-                            .join("")}
+                        .map((option) => `<p class="option">${option}</p>`)
+                        .join("")}
                     </div>
                 </div>`;
                 break;
@@ -406,9 +394,8 @@ function buildSettingPageHtml(guildId, data) {
             case "switch":
                 sectionHtml = `
                     <label class="switch">
-                        <input data-id="${key}" type="checkbox" ${
-                    fieldData.default ? "checked" : ""
-                }>
+                        <input data-id="${key}" type="checkbox" ${fieldData.default ? "checked" : ""
+                    }>
                         <span class="switch-slider"></span>
                     </label>`;
                 break;
@@ -437,38 +424,35 @@ function buildSettingPageHtml(guildId, data) {
                         <img 
                             src="${data?.guild?.avatar || ""}" 
                             alt="${data?.guild?.name ?? ""}"
-                            ${
-                                data?.guild
-                                    ? `onerror='this.src="/static/img/notFound.png"'`
-                                    : ""
-                            }
+                            ${data?.guild
+            ? `onerror='this.src="/static/img/notFound.png"'`
+            : ""
+        }
                             
                         >
                         <div class="sub-title">
                             <h2>${data?.guild?.name ?? ""}</h2>
-                            <p>${
-                                data?.guild
-                                    ? localeTexts.settings.variable
-                                          .headerDescription
-                                    : ""
-                            }</p>
+                            <p>${data?.guild
+            ? localeTexts.settings.variable
+                .headerDescription
+            : ""
+        }</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            ${
-                fieldsHtml
-                    ? `<div class="section">
+            ${fieldsHtml
+            ? `<div class="section">
                     <div class="header">
                         <h2>${localeTexts.settings.variable.general}</h2>
                     </div>
                     ${fieldsHtml}
                 </div>`
-                    : `<div class="center">
+            : `<div class="center">
                         <div class="loader"></div>
                     </div>`
-            }
+        }
 
             <div class="changes-bar">
                 <div class="left">
@@ -476,12 +460,10 @@ function buildSettingPageHtml(guildId, data) {
                     <p>${localeTexts.settings.variable.barTitle}</p>
                 </div>
                 <div class="right">
-                    <p class="reset">${
-                        localeTexts.settings.variable.barAction1
-                    }</p>
-                    <p class="submit">${
-                        localeTexts.settings.variable.barAction2
-                    }</p>
+                    <p class="reset">${localeTexts.settings.variable.barAction1
+        }</p>
+                    <p class="submit">${localeTexts.settings.variable.barAction2
+        }</p>
                 </div>
             </div>
         </div>
@@ -516,12 +498,10 @@ function buildModalHtml(data) {
                 sectionHtml = `
                     <p class="title">${fieldData.title}</p>
                     <div class="select-container">
-                        <div class="selected-container" data-id="field-${key}" data-value="${
-                    fieldData.default
-                }">
-                            <p>${
-                                fieldData.options[fieldData.default]?.title
-                            }</p>
+                        <div class="selected-container" data-id="field-${key}" data-value="${fieldData.default
+                    }">
+                            <p>${fieldData.options[fieldData.default]?.title
+                    }</p>
                             <span class="material-symbols-outlined">arrow_drop_up</span>
                         </div>
                         <div class="options">${optionsHTML}</div>
@@ -529,11 +509,10 @@ function buildModalHtml(data) {
                 `;
                 break;
         }
-        return `<div class="section" data-id="${key}" ${
-            fieldData.disable
-                ? 'data-type="canTrigger" style="display: none;"'
-                : ""
-        }>
+        return `<div class="section" data-id="${key}" ${fieldData.disable
+            ? 'data-type="canTrigger" style="display: none;"'
+            : ""
+            }>
             ${sectionHtml}
         </div>`;
     };
@@ -575,6 +554,66 @@ function buildModalHtml(data) {
 
 $(document).ready(function () {
     const player = new Player();
+
+    $(document).keydown(function (e) {
+        const { key, altKey, ctrlKey, metaKey } = e;
+
+        const keyMap = {
+            focusSearch: 'k',
+            repeat: 'r',
+            shuffle: 's',
+            playPause: ' ',
+            seekForward: 'ArrowRight',
+            seekBackward: 'ArrowLeft',
+            backTo: 'ArrowUp',
+            skipTo: 'ArrowDown'
+        };
+
+        // Check for Alt/Cmd or Ctrl + Key combinations
+        if (altKey || (ctrlKey || metaKey)) {
+            switch (key) {
+                case keyMap.focusSearch:
+                    $('#search-query').focus();
+                    break;
+                case keyMap.repeat:
+                    if (altKey) {
+                        player.repeatMode();
+                    } else if (ctrlKey || metaKey) {
+                        player.repeatMode();
+                    }
+                    break;
+                case keyMap.shuffle:
+                    if (altKey) {
+                        player.shuffle();
+                    } else if (ctrlKey || metaKey) {
+                        player.shuffle();
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        switch (key) {
+            case keyMap.playPause:
+                player.togglePause();
+                break;
+            case keyMap.seekForward:
+                player.seekTo(player.currentPosition + 10000);
+                break;
+            case keyMap.seekBackward:
+                player.seekTo(player.currentPosition - 10000);
+                break;
+            case keyMap.backTo:
+                player.backTo();
+                break;
+            case keyMap.skipTo:
+                player.skipTo();
+                break;
+            default:
+                break;
+        }
+    });
 
     $(".main-container .sections").slice(1).hide();
     changePage("bot-not-found", false, false)
@@ -720,8 +759,7 @@ $(document).ready(function () {
             let progress = $(this).val() / 500;
             $(this).css(
                 "background",
-                `linear-gradient(to right, var(--primary) ${
-                    progress * 100
+                `linear-gradient(to right, var(--primary) ${progress * 100
                 }%, var(--text-muted) ${progress * 100}%)`
             );
             player.startTime.text(
@@ -786,7 +824,7 @@ $(document).ready(function () {
                 if (pageName == "settings-page") {
                     return build_server_page();
                 }
-                
+
                 if (pageName == "explore-page") {
                     return buildExplorePage();
                 }
@@ -1006,17 +1044,17 @@ $(document).ready(function () {
             if ($target.hasClass("playlist-more")) {
                 return playlistType === "playlist"
                     ? buildContextMenu(e, ["playlistShuffle"], {
-                          selectedPlaylistId,
-                      })
+                        selectedPlaylistId,
+                    })
                     : buildContextMenu(
-                          e,
-                          [
-                              "playlistShuffle",
-                              "playlistRename",
-                              "playlistRemove",
-                          ],
-                          { selectedPlaylistId }
-                      );
+                        e,
+                        [
+                            "playlistShuffle",
+                            "playlistRename",
+                            "playlistRemove",
+                        ],
+                        { selectedPlaylistId }
+                    );
             }
 
             const $track = $target.closest(".track-row");
@@ -1160,7 +1198,7 @@ $(document).ready(function () {
                 case "reload-settings-page":
                     build_server_page();
                     break;
-                
+
                 case "autoplay":
                     const status = !player.autoplay
                     player.send({ op: "toggleAutoplay", status })
@@ -1907,7 +1945,7 @@ $(document).ready(function () {
                 localeTexts.context.moveToBottom,
                 "context-move-bottom",
                 options.selectedTrackId === player.queue.at(-1)?.trackId ||
-                    !player.isDJ
+                !player.isDJ
             ),
             copyLink: createActionElement(
                 "content_copy",
@@ -1975,9 +2013,8 @@ $(document).ready(function () {
         const blockedClass = isBlocked ? "blocked" : "";
         const alertClass = isAlert ? "alert" : "";
         return `<div class="row ${alertClass} ${blockedClass}" id="${id}">
-                    <span class="material-symbols-outlined ${
-                        isBlocked ? "" : "filled"
-                    }">${icon}</span>
+                    <span class="material-symbols-outlined ${isBlocked ? "" : "filled"
+            }">${icon}</span>
                     <p>${text}</p>
                 </div>`;
     }
@@ -2067,9 +2104,8 @@ $(document).ready(function () {
     }
 
     function buildTrackPage(trackId) {
-        let trackPageId = `track-page-${
-            $(".main-container").find('[id^="track-page"]').length
-        }`;
+        let trackPageId = `track-page-${$(".main-container").find('[id^="track-page"]').length
+            }`;
         let decodedTrack = decode(trackId);
 
         $trackPageHtml =
@@ -2077,15 +2113,13 @@ $(document).ready(function () {
             <div class="section">
                 <div class="track-header">
                     <div class="left">
-                        <img src="${
-                            decodedTrack.artworkUrl
-                        }" onerror="this.src='/static/img/notFound.png'" alt="">
+                        <img src="${decodedTrack.artworkUrl
+                }" onerror="this.src='/static/img/notFound.png'" alt="">
                         <div class="track-info">
                             <p class="small">${localeTexts.track.track}</p>
                             <h1 class="large">${decodedTrack.title}</h1>
-                            <p class="middle">${
-                                decodedTrack.author
-                            } • ${msToReadableTime(decodedTrack.length)}</p>
+                            <p class="middle">${decodedTrack.author
+                } • ${msToReadableTime(decodedTrack.length)}</p>
                         </div>
                     </div>
                     <div class="actions">
@@ -2214,12 +2248,12 @@ $(document).ready(function () {
         }
     });
 
-    $('.menu-container').on('click', '.menu-btn', function() {
+    $('.menu-container').on('click', '.menu-btn', function () {
         if (isMobile()) {
             closeAllOverlays();
         }
     });
-    
+
     // Queue toggle button (controller queue button)
     $('#toggle-queue-view').on('click', function (e) {
         if (isMobile()) {
@@ -2234,7 +2268,7 @@ $(document).ready(function () {
     $(document).on('click touchstart', function (e) {
         if (!isMobile()) return;
         const $target = $(e.target);
-        
+
         // Close menu if clicking outside of menu and its toggle button, and menu is active
         if (
             !$target.closest('.menu-container').length &&
