@@ -230,11 +230,11 @@ msgstr "Ajoutez plus de morceaux à la file avant de mélanger."
 
 #: templates/index.html:73
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Raccourcis clavier"
 
 #: templates/index.html:74
 msgid "Quick access to common actions"
-msgstr ""
+msgstr "Accès rapide aux actions courantes"
 
 #: templates/index.html:75 templates/queue.html:12
 msgid "Close"
@@ -246,7 +246,7 @@ msgstr "Don"
 
 #: templates/index.html:78
 msgid "Playback Controls"
-msgstr ""
+msgstr "Contrôles de lecture"
 
 #: templates/index.html:79
 msgid "Queue Management"
@@ -743,7 +743,7 @@ msgstr "Gérez les paramètres et préférences de votre compte"
 
 #: templates/index.html:372
 msgid "Default language for public dashboard."
-msgstr ""
+msgstr "Langue par défaut pour le tableau de bord public."
 
 #: templates/index.html:391
 msgid "Dark Mode"

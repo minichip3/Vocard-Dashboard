@@ -216,11 +216,11 @@ msgstr "在隨機播放之前，請添加更多歌曲到播放列表。"
 
 #: templates/index.html:73
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "鍵盤快捷鍵"
 
 #: templates/index.html:74
 msgid "Quick access to common actions"
-msgstr ""
+msgstr "快速訪問常用操作"
 
 #: templates/index.html:75 templates/queue.html:12
 msgid "Close"
@@ -232,7 +232,7 @@ msgstr "捐款"
 
 #: templates/index.html:78
 msgid "Playback Controls"
-msgstr ""
+msgstr "播放控制"
 
 #: templates/index.html:79
 msgid "Queue Management"
@@ -702,7 +702,7 @@ msgstr "管理您的帳戶設置和偏好"
 
 #: templates/index.html:372
 msgid "Default language for public dashboard."
-msgstr ""
+msgstr "公共儀表板的預設語言。"
 
 #: templates/index.html:391
 msgid "Dark Mode"

@@ -230,11 +230,11 @@ msgstr "Dodaj więcej utworów do kolejki przed jej przemieszaniem."
 
 #: templates/index.html:73
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Skróty klawiszowe"
 
 #: templates/index.html:74
 msgid "Quick access to common actions"
-msgstr ""
+msgstr "Szybki dostęp do powszechnych akcji"
 
 #: templates/index.html:75 templates/queue.html:12
 msgid "Close"
@@ -246,7 +246,7 @@ msgstr "Dotacja"
 
 #: templates/index.html:78
 msgid "Playback Controls"
-msgstr ""
+msgstr "Kontrola odtwarzania"
 
 #: templates/index.html:79
 msgid "Queue Management"
@@ -737,7 +737,7 @@ msgstr "Zarządzaj swoimi ustawieniami konta oraz preferencjami"
 
 #: templates/index.html:372
 msgid "Default language for public dashboard."
-msgstr ""
+msgstr "Domyślny język dla publicznego pulpitu nawigacyjnego."
 
 #: templates/index.html:391
 msgid "Dark Mode"
