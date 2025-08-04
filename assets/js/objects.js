@@ -872,7 +872,7 @@ const methods = {
                         inputType: "dropdown",
                         optionClasses: [],
                     },
-                    queueType: {
+                    queue_type: {
                         title: localeTexts.settings.queueType.title,
                         description: localeTexts.settings.queueType.description,
                         default: data.settings.queueType,
@@ -895,27 +895,34 @@ const methods = {
                         inputType: "switch",
                         optionClasses: [],
                     },
-                    votedisable: {
+                    disabled_vote: {
                         title: localeTexts.settings.voteDisable.title,
                         description:
                             localeTexts.settings.voteDisable.description,
-                        default: data.settings?.votedisable,
+                        default: data.settings?.disabled_vote,
                         inputType: "switch",
                         optionClasses: [],
                     },
-                    controller: {
-                        title: localeTexts.settings.controller.title,
+                    controller_msg: {
+                        title: localeTexts.settings.controllerMsg.title,
                         description:
-                            localeTexts.settings.controller.description,
-                        default: data.settings?.controller,
+                            localeTexts.settings.controllerMsg.description,
+                        default: data.settings?.controller_msg,
                         inputType: "switch",
                         optionClasses: [],
                     },
-                    duplicateTrack: {
+                    duplicate_track: {
                         title: localeTexts.settings.duplicateTrack.title,
                         description:
                             localeTexts.settings.duplicateTrack.description,
-                        default: data.settings?.duplicateTrack,
+                        default: data.settings?.duplicate_track,
+                        inputType: "switch",
+                        optionClasses: [],
+                    },
+                    silent_msg: {
+                        title: localeTexts.settings.silentMsg.title,
+                        description: localeTexts.settings.silentMsg.description,
+                        default: data.settings?.silent_msg,
                         inputType: "switch",
                         optionClasses: [],
                     },
