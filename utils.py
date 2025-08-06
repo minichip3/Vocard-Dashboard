@@ -23,7 +23,7 @@ from typing import (
 )
 
 DISCORD_API_BASE_URL = 'https://discord.com/api'
-VERSION_REQUIRED = "2.7.0"
+VERSION_REQUIRED = "2.7.2"
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 ASSETS_DIR = os.path.join(ROOT_DIR, "assets")
