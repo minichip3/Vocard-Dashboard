@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  2.0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-08-04 10:11+0800\n"
+"POT-Creation-Date: 2025-08-06 10:20+0800\n"
 "PO-Revision-Date: 2025-05-11 20:07+0200\n"
 "Last-Translator: Buco7854\n"
 "Language: fr\n"
@@ -804,3 +804,4 @@ msgstr "RETOUR EN HAUT"
 #: templates/queue.html:55
 msgid "Autoplay"
 msgstr "lecture auto"
+
