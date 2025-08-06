@@ -442,19 +442,15 @@ const methods = {
                 region.append(`
                     <div class="track-row">
                         <div class="left">
-                            <img src="${
-                                track.artworkUrl
-                            }" onerror="this.src='/static/img/notFound.png'" alt="">
+                            <img src="${track.artworkUrl
+                    }" onerror="this.src='/static/img/notFound.png'" alt="">
                             <div class="track-info">
                                 <p class="title">${track.title}</p>
                                 <p class="description">${track.author}</p>
                             </div>
                         </div>
-                        <p>${
-                            track.isStream
-                                ? "LIVE"
-                                : msToReadableTime(track.length)
-                        }</p>
+                        <p>${track.isStream ? "LIVE" : msToReadableTime(track.length)
+                    }</p>
                     </div>`);
             }
             $(".search-result").fadeIn(200);
@@ -726,7 +722,7 @@ const methods = {
             if (data.playlistId in player.playlists) {
                 let trackId =
                     player.playlists[data.playlistId]?.tracks[
-                        data.trackPosition
+                    data.trackPosition
                     ];
                 if (trackId != data.trackId) return;
 
@@ -766,31 +762,26 @@ const methods = {
 
         const createServerCard = (serverId, serverData, isInvite = false) => {
             return `
-                <div class="server-card ${
-                    isInvite ? "" : "access-server-settings"
+                <div class="server-card ${isInvite ? "" : "access-server-settings"
                 }" data-id="${serverId}">
                     <div class="banner">
-                        <img src="${
-                            serverData.banner
-                        }" onerror="this.src='/static/img/default-banner.svg'" alt="">
+                        <img src="${serverData.banner
+                }" onerror="this.src='/static/img/default-banner.svg'" alt="">
                     </div>
                     <div class="info">
-                        <img class="server-icon" src="${
-                            serverData.avatar
-                        }" onerror="this.src='/static/img/notFound.png'" alt="">
+                        <img class="server-icon" src="${serverData.avatar
+                }" onerror="this.src='/static/img/notFound.png'" alt="">
                         <div class="server-info">
                             <p class="title">${serverData.name}</p>
-                            <p class="description">${
-                                isInvite
-                                    ? localeTexts.settings.variable.inviteText
-                                    : `${serverData.memberCount}&nbsp;${localeTexts.settings.variable.membersText}`
-                            }</p>
+                            <p class="description">${isInvite
+                    ? localeTexts.settings.variable.inviteText
+                    : `${serverData.memberCount}&nbsp;${localeTexts.settings.variable.membersText}`
+                }</p>
                         </div>
                     </div>
                     <div class="action-info">
-                        <span class="material-symbols-outlined">${
-                            isInvite ? "add" : "construction"
-                        }</span>
+                        <span class="material-symbols-outlined">${isInvite ? "add" : "construction"
+                }</span>
                     </div>
                 </div>`;
         };
@@ -823,12 +814,12 @@ const methods = {
                 </div>
                 <div class="server-cards">
                     ${Object.entries(data.mutualGuilds)
-                        .map(([serverId, serverData]) => {
-                            if (player.guildId && player.guildId === serverId)
-                                return "";
-                            return createServerCard(serverId, serverData);
-                        })
-                        .join("")}
+                .map(([serverId, serverData]) => {
+                    if (player.guildId && player.guildId === serverId)
+                        return "";
+                    return createServerCard(serverId, serverData);
+                })
+                .join("")}
                 </div>
             </div>`;
 
@@ -843,17 +834,17 @@ const methods = {
                 </div>
                 <div class="server-cards">
                     ${Object.entries(data.inviteGuilds)
-                        .map(
-                            ([serverId, serverData]) => `
+                .map(
+                    ([serverId, serverData]) => `
                         <a href="${`https://discord.com/oauth2/authorize?client_id=${player.selectedBot.id}&permissions=2184538176&scope=bot%20applications.commands`}" target="_blank" rel="noopener noreferrer">
                             ${createServerCard(serverId, serverData, true)}
                         </a>
                     `
-                        )
-                        .join("")}
+                )
+                .join("")}
                 </div>
             </div>`;
-        
+
         html += getFooterHtml();
         $settingsPage.html(html);
     },
@@ -881,7 +872,7 @@ const methods = {
                         inputType: "dropdown",
                         optionClasses: [],
                     },
-                    queueType: {
+                    queue_type: {
                         title: localeTexts.settings.queueType.title,
                         description: localeTexts.settings.queueType.description,
                         default: data.settings.queueType,
@@ -904,27 +895,34 @@ const methods = {
                         inputType: "switch",
                         optionClasses: [],
                     },
-                    votedisable: {
+                    disabled_vote: {
                         title: localeTexts.settings.voteDisable.title,
                         description:
                             localeTexts.settings.voteDisable.description,
-                        default: data.settings?.votedisable,
+                        default: data.settings?.disabled_vote,
                         inputType: "switch",
                         optionClasses: [],
                     },
-                    controller: {
-                        title: localeTexts.settings.controller.title,
+                    controller_msg: {
+                        title: localeTexts.settings.controllerMsg.title,
                         description:
-                            localeTexts.settings.controller.description,
-                        default: data.settings?.controller,
+                            localeTexts.settings.controllerMsg.description,
+                        default: data.settings?.controller_msg,
                         inputType: "switch",
                         optionClasses: [],
                     },
-                    duplicateTrack: {
+                    duplicate_track: {
                         title: localeTexts.settings.duplicateTrack.title,
                         description:
                             localeTexts.settings.duplicateTrack.description,
-                        default: data.settings?.duplicateTrack,
+                        default: data.settings?.duplicate_track,
+                        inputType: "switch",
+                        optionClasses: [],
+                    },
+                    silent_msg: {
+                        title: localeTexts.settings.silentMsg.title,
+                        description: localeTexts.settings.silentMsg.description,
+                        default: data.settings?.silent_msg,
                         inputType: "switch",
                         optionClasses: [],
                     },
@@ -1006,8 +1004,7 @@ class Player {
     constructor() {
         this.socket = new Socket(
             this,
-            `${window.location.protocol === "https:" ? "wss" : "ws"}://${
-                window.location.hostname
+            `${window.location.protocol === "https:" ? "wss" : "ws"}://${window.location.hostname
             }:${window.location.port}/ws_user`
         );
         this.socket.connect(this);
@@ -1191,9 +1188,8 @@ class Player {
                 EFFECT_ICONS[element.tag] || {};
 
             options += `
-                <div class="option ${isActive ? "active" : ""}" data-id="${
-                element.tag
-            }">
+                <div class="option ${isActive ? "active" : ""}" data-id="${element.tag
+                }">
                     <span class="material-symbols-outlined">${icon}</span>
                     <p>${capitalize(text)}</p>
                 </div>`;
@@ -1264,7 +1260,7 @@ class Player {
             "disabled",
             this.currentTrack?.isStream ? "disabled" : false
         );
-        
+
         this.updateImage("#controller-img", this.currentTrack?.artworkUrl);
         this.updateImage("#now-playing-img", this.currentTrack?.artworkUrl);
         this.updateImage(
@@ -1314,9 +1310,8 @@ class Player {
             let date = new Date(mail?.time * 1000);
 
             $inboxPanel.append(`
-                <div class="message" data-id="${mail?.sender?.id}-${
-                mail?.referId
-            }">
+                <div class="message" data-id="${mail?.sender?.id}-${mail?.referId
+                }">
                     <div>
                         <img src="${mail?.sender?.avatarUrl}"
                             alt="">
@@ -1325,9 +1320,9 @@ class Player {
                         <p class="title">${mail?.title}</p>
                         <p class="time">${date.toDateString()} • ${date.toLocaleTimeString()}</p>
                         <p class="description">${mail?.description.replace(
-                            "\n",
-                            "<br>"
-                        )}</p>
+                    "\n",
+                    "<br>"
+                )}</p>
                         <div class="actions">
                             <p class="action accept">${localeTexts.accept}</p>
                             <p class="action">${localeTexts.cancel}</p>

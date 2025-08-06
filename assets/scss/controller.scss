@@ -170,7 +170,9 @@
 		grid-template-columns: 1fr 2fr 1fr;
 		padding: 0.5rem 0.5rem;
 		gap: 0.5rem;
-		.left, .center, .right {
+		.left,
+		.center,
+		.right {
 			min-width: 0;
 		}
 	}
