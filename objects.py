@@ -1,6 +1,7 @@
 import asyncio
 import json
 import quart
+import os
 
 from babel.languages import get_official_languages
 from geoip2 import records
@@ -336,13 +337,13 @@ class Settings:
         self.settings_file = settings_file
         self.settings = self.load()
 
-        self.host: str = self.get_setting("host", "127.0.0.1")
-        self.port: int = self.get_setting("port", 5000)
-        self.password: int = self.get_setting("password")
-        self.client_id: str = self.get_setting("client_id")
-        self.client_secret_id: str = self.get_setting("client_secret_id")
-        self.secret_key: str = self.get_setting("secret_key")
-        self.redirect_url: str = self.get_setting("redirect_url")
+        self.host: str = self.get_setting("host") or os.getenv("HOST")
+        self.port: int = self.get_setting("port") or os.getenv("PORT", 5000)
+        self.password: int = self.get_setting("password") or os.getenv("PASSWORD")
+        self.client_id: str = self.get_setting("client_id") or os.getenv("CLIENT_ID")
+        self.client_secret_id: str = self.get_setting("client_secret_id") or os.getenv("CLIENT_SECRET_ID")
+        self.secret_key: str = self.get_setting("secret_key") or os.getenv("SECRET_KEY")
+        self.redirect_url: str = self.get_setting("redirect_url") or os.getenv("REDIRECT_URL")
 
         self.logging: Dict[str, Any] = self.get_setting("logging")
 

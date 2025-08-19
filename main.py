@@ -3,6 +3,7 @@ import os
 import functools
 import update
 
+from dotenv import load_dotenv
 from datetime import timedelta
 
 from hypercorn import Config
@@ -48,6 +49,8 @@ app.secret_key = SETTINGS.secret_key
 
 babel = Babel(app)
 babel.init_app(app, locale_selector=get_locale)
+
+load_dotenv()
 
 def login_required(func):
     @functools.wraps(func)
