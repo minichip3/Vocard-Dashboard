@@ -3,6 +3,7 @@ import os
 import functools
 import update
 
+from dotenv import load_dotenv
 from datetime import timedelta
 
 from hypercorn import Config
@@ -49,6 +50,8 @@ app.secret_key = SETTINGS.secret_key
 babel = Babel(app)
 babel.init_app(app, locale_selector=get_locale)
 
+load_dotenv()
+
 def login_required(func):
     @functools.wraps(func)
     async def wrapper(*args, **kwargs):
@@ -75,7 +78,7 @@ async def setup():
         if not lang.startswith(".")
     ]
     for lang_code in lang_codes:
-        LANGUAGES[lang_code] = {"name": Locale.parse(lang_code).get_display_name(lang_code)}
+        LANGUAGES[lang_code] = {"name": Locale.parse(lang_code).get_display_name(lang_code).capitalize()}
 
     process_js_files()
     compile_scss()

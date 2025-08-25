@@ -4,21 +4,11 @@
         <meta charset="UTF-16" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link
-            rel="icon"
-            type="image/x-icon"
-            href="{{ url_for('static', filename='img/favicon.ico') }}"
-        />
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/favicon.ico') }}" />
 
-        <link
-            rel="stylesheet"
-            href="{{ url_for('static', filename='css/dashboard-style.css') }}"
-        />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard-style.css') }}" />
 
-        <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-        />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <link
             href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
             rel="stylesheet"
@@ -74,14 +64,31 @@
                 disabled: "{{ _('disabled') }}",
                 resultsFoundCount: "{{ _('Results found') }}",
                 errors: {
-                    selectBotError:
-                        "{{ _('You are not able to select this bot!') }}",
-                    noPlayerError:
-                        "{{ _('You need to connect a bot in order to perform this action.') }}",
-                    noInboxMessage:
-                        "{{ _('No message for you at this time.') }}",
-                    noEnoughTrackToShuffle:
-                        "{{ _('Add more songs to the queue before shuffling.') }}",
+                    selectBotError: "{{ _('You are not able to select this bot!') }}",
+                    noPlayerError: "{{ _('You need to connect a bot in order to perform this action.') }}",
+                    noInboxMessage: "{{ _('No message for you at this time.') }}",
+                    noEnoughTrackToShuffle: "{{ _('Add more songs to the queue before shuffling.') }}",
+                },
+                shortcuts: {
+                    title: "{{ _('Keyboard Shortcuts') }}",
+                    description: "{{ _('Quick access to common actions') }}",
+                    close: "{{ _('Close') }}",
+                    categories: {
+                        navigation: "{{ _('Navigation') }}",
+                        playbackControls: "{{ _('Playback Controls') }}",
+                        queueManagement: "{{ _('Queue Management') }}",
+                    },
+                    items: {
+                        showShortcuts: "{{ _('Show keyboard shortcuts') }}",
+                        focusSearch: "{{ _('Focus search bar') }}",
+                        playPause: "{{ _('Play/Pause') }}",
+                        forward10s: "{{ _('Forward 10 seconds') }}",
+                        rewind10s: "{{ _('Rewind 10 seconds') }}",
+                        previousTrack: "{{ _('Previous track') }}",
+                        nextTrack: "{{ _('Next track') }}",
+                        toggleRepeat: "{{ _('Toggle repeat mode') }}",
+                        toggleShuffle: "{{ _('Toggle shuffle') }}",
+                    },
                 },
                 track: {
                     track: "{{ _('Track') }}",
@@ -96,8 +103,7 @@
                         standard: "{{ _('Standard Playlist') }}",
                         online: "{{ _('Online Playlist') }}",
                         url: "{{ _('Playlist Url') }}",
-                        urlPlaceholder:
-                            "{{ _('e.g. Youtube or Spotify playlist url') }}",
+                        urlPlaceholder: "{{ _('e.g. Youtube or Spotify playlist url') }}",
                         create: "{{ _('Create') }}",
                         delete: "{{ _('Delete') }}",
                     },
@@ -108,34 +114,27 @@
                     },
                     create: {
                         title: "{{ _('Create Playlist') }}",
-                        description:
-                            "{{ _('Create and personalize your playlist for every mood, crafted exclusively by you.') }}",
+                        description: "{{ _('Create and personalize your playlist for every mood, crafted exclusively by you.') }}",
                     },
                     rename: {
                         title: "{{ _('Rename Playlist') }}",
-                        description:
-                            "{{ _('Allows you to change the name of your existing collections of songs for better organization.') }}",
+                        description: "{{ _('Allows you to change the name of your existing collections of songs for better organization.') }}",
                     },
                     delete: {
                         title: "{{ _('Delete Playlist') }}",
-                        description:
-                            "{{ _('Enables the removal of unwanted collections of songs from your library.') }}",
+                        description: "{{ _('Enables the removal of unwanted collections of songs from your library.') }}",
                     },
                 },
                 settings: {
                     variable: {
-                        headerDescription:
-                            "{{ _('Adjust the configurations on your server for an optimized experience.') }}",
+                        headerDescription: "{{ _('Adjust the configurations on your server for an optimized experience.') }}",
                         general: "{{ _('General') }}",
                         header1: "{{ _('You are now listening in') }}",
                         header2: "{{ _('My Servers') }}",
-                        description2:
-                            "{{ _('Please select a server whose settings you would like to modify') }}",
+                        description2: "{{ _('Please select a server whose settings you would like to modify') }}",
                         header3: "{{ _('Invite the Bot to Your Server') }}",
-                        description3:
-                            "{{ _('The bot is not currently a member of the following server') }}",
-                        barTitle:
-                            "{{ _('Careful — you have unsaved changes!') }}",
+                        description3: "{{ _('The bot is not currently a member of the following server') }}",
+                        barTitle: "{{ _('Careful — you have unsaved changes!') }}",
                         barAction1: "{{ _('Reset') }}",
                         barAction2: "{{ _('Save Changes') }}",
                         inviteText: "{{ _('Invite to this server') }}",
@@ -143,48 +142,43 @@
                     },
                     prefix: {
                         title: "{{ _('Prefix') }}",
-                        description:
-                            "{{ _('Change the default prefix for message commands.') }}",
+                        description: "{{ _('Change the default prefix for message commands.') }}",
                     },
                     language: {
                         title: "{{ _('Language') }}",
-                        description:
-                            "{{ _('You can choose your preferred language, the bot message will change to the language you set.') }}",
+                        description: "{{ _('You can choose your preferred language, the bot message will change to the language you set.') }}",
                     },
                     queueType: {
                         title: "{{ _('Queue Mode') }}",
-                        description:
-                            "{{ _('Change to another type of queue mode.') }}",
+                        description: "{{ _('Change to another type of queue mode.') }}",
                     },
                     dj: {
                         title: "{{ _('DJ Role') }}",
-                        description:
-                            "{{ _('Set a DJ role or remove DJ role.') }}",
+                        description: "{{ _('Set a DJ role or remove DJ role.') }}",
                     },
                     _247: {
                         title: "{{ _('24/7 Mode') }}",
-                        description:
-                            "{{ _('Toggles 24/7 mode, which disables automatic inactivity-based disconnects.') }}",
+                        description: "{{ _('Toggles 24/7 mode, which disables automatic inactivity-based disconnects.') }}",
                     },
                     voteDisable: {
                         title: "{{ _('Vote Bypass') }}",
-                        description:
-                            "{{ _('Toggles in the voting system provide you the option to participate or abstain from voting to skip a song.') }}",
+                        description: "{{ _('Toggles in the voting system provide you the option to participate or abstain from voting to skip a song.') }}",
                     },
-                    controller: {
+                    controllerMsg: {
                         title: "{{ _('Toggle Music Controller') }}",
-                        description:
-                            "{{ _('Toggles to send a message when clicking the button in the music controller.') }}",
+                        description: "{{ _('Toggles to send a message when clicking the button in the music controller.') }}",
                     },
                     duplicateTrack: {
                         title: "{{ _('Duplicate Track') }}",
-                        description:
-                            "{{ _('Toggle Vocard to prevent duplicate songs from queuing.') }}",
+                        description: "{{ _('Toggle Vocard to prevent duplicate songs from queuing.') }}",
+                    },
+                    silentMsg: {
+                        title: "{{ _('Silent Message') }}",
+                        description: "{{ _('Toggle silent messaging to send messages without alerting.') }}"
                     },
                     stageAnnounceTemplate: {
                         title: "{{ _('Voice Status Template') }}",
-                        description:
-                            "{{ _('Customize the channel topic template (Displayed while playing music).') }}",
+                        description: "{{ _('Customize the channel topic template (Displayed while playing music).') }}",
                     },
                 },
                 effects: {
@@ -222,33 +216,14 @@
                     removeTrack: "{{ _('Remove track') }}",
                     addToPlaylist: "{{ _('Add to playlist') }}",
                 },
-            };
+            }
         </script>
 
-        <!-- <script
-            type="text/javascript"
-            src="{{ url_for('static', filename='js/svg-inject.min.js') }}"
-        ></script> -->
-        <script
-            type="text/javascript"
-            src="{{ url_for('static', filename='js/utils.min.js') }}"
-        ></script>
-        <script
-            type="text/javascript"
-            src="{{ url_for('static', filename='js/websocket.min.js') }}"
-        ></script>
-        <script
-            type="text/javascript"
-            src="{{ url_for('static', filename='js/objects.min.js') }}"
-        ></script>
-        <script
-            type="text/javascript"
-            src="{{ url_for('static', filename='js/action.min.js') }}"
-        ></script>
-        <script
-            type="text/javascript"
-            src="{{ url_for('static', filename='js/transformer.min.js') }}"
-        ></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/utils.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/websocket.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/objects.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/action.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/transformer.min.js') }}"></script>
 
         <title>Vocard</title>
     </head>
@@ -258,183 +233,20 @@
             <div class="loader"></div>
         </div>
         <div class="main-grid-container">
-            <div class="header-container">
-                <div class="back-page-btn" id="back-page-btn">
-                    <span class="material-symbols-outlined clickable"
-                        >arrow_back</span
-                    >
-                </div>
-                <div class="search-container">
-                    <div class="search-bar">
-                        <span class="material-symbols-outlined">search</span>
-                        <input
-                            type="text"
-                            id="search-query"
-                            placeholder="{{ _('Search your input and add it to the queue') }}"
-                        />
-                        <div
-                            class="loader"
-                            id="search-loader"
-                            style="display: none"
-                        ></div>
-                    </div>
-                    <div class="search-result">
-                        <div class="header">
-                            <h4 id="result-count"></h4>
-                            <div class="btn" id="add-all-tracks-btn">
-                                <span class="material-symbols-outlined"
-                                    >add</span
-                                >
-                                <p>{{ _("Add All") }}</p>
-                            </div>
-                        </div>
-                        <div class="tracks" id="search-result-tracks"></div>
-                    </div>
-                </div>
-
-                <div class="avatar-container" id="channel-members"></div>
-
-                <div class="header-btn">
-                    <div class="btn" id="toggle-inbox-panel">
-                        <span class="material-symbols-outlined filled"
-                            >inbox</span
-                        >
-                        <p class="label">{{ _("Inbox") }}</p>
-                    </div>
-                    <div class="panel" id="inbox-panel">
-                        <div class="header">
-                            <span class="material-symbols-outlined filled"
-                                >inbox</span
-                            >
-                            <h3>{{ _("Inbox") }}</h3>
-                        </div>
-                        <div class="sections">
-                            <div class="no-message">
-                                <img src="/static/img/noMessage.svg" alt />
-                                <p>
-                                    {{ _("No message for you at this time.") }}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="menu-container">
-                <div id="close-menu">
-                    <span class="material-symbols-outlined">chevron_right</span>
-                </div>
-                <div class="scrollbar">
-                    <div class="top">
-                        <div class="user">
-                            <img src="{{ user.avatar.url }}" alt />
-                            <div class="info">
-                                <p class="role">DJ</p>
-                                <p class="username">{{ user.name }}</p>
-                            </div>
-                        </div>
-                        <div class="bot-selection">
-                            <div class="selected">
-                                <div class="left"></div>
-                                <span class="material-symbols-outlined"
-                                    >keyboard_arrow_down</span
-                                >
-                            </div>
-                            <div class="options"></div>
-                        </div>
-                        <div class="bar"></div>
-                        <div class="section">
-                            <div class="menu-btn active" id="menu-main-page">
-                                <span class="material-symbols-outlined"
-                                    >home</span
-                                >
-                                <p>{{ _("Home") }}</p>
-                            </div>
-
-                            <div class="menu-btn" id="menu-explore-page">
-                                <span class="material-symbols-outlined"
-                                    >explore</span
-                                >
-                                <p>{{ _("Explore") }}</p>
-                            </div>
-
-                            <div class="menu-btn" id="menu-settings-page">
-                                <span class="material-symbols-outlined"
-                                    >dns</span
-                                >
-                                <p>{{ _("Server") }}</p>
-                            </div>
-                        </div>
-                        <div class="bar"></div>
-                        <div class="section">
-                            <div
-                                class="menu-btn center"
-                                id="menu-create-playlist"
-                            >
-                                <span class="material-symbols-outlined"
-                                    >add</span
-                                >
-                                <p class="header-text">
-                                    {{ _("Create Playlist") }}
-                                </p>
-                            </div>
-                            <div id="playlist-selector"></div>
-                        </div>
-                    </div>
-                    <div class="botton">
-                        <div class="section">
-                            <!-- <div class="menu-btn" id="menu-toggle-theme">
-                            <span class="material-symbols-outlined">light_mode</span>
-                            <p>{{ _("Light Mode") }}</p>
-                        </div> -->
-                            <div class="menu-btn" id="menu-user-settings-page">
-                                <span class="material-symbols-outlined"
-                                    >settings</span
-                                >
-                                <p>{{ _("Settings") }}</p>
-                            </div>
-                            <a
-                                href="https://discord.gg/wRCgB7vBQv"
-                                target="_blank"
-                            >
-                                <div class="menu-btn">
-                                    <span class="material-symbols-outlined"
-                                        >help</span
-                                    >
-                                    <p>{{ _("Help") }}</p>
-                                </div>
-                            </a>
-                            <a href="logout">
-                                <div class="menu-btn red">
-                                    <span class="material-symbols-outlined"
-                                        >logout</span
-                                    >
-                                    <p>{{ _("Logout") }}</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% include "header.html" %} {% include "menu.html" %}
+            <div id="menu-overlay" class="mobile-overlay"></div>
             <div class="main-container">
                 <div class="warning-bar">
                     <div class="loader" style="width: 14px"></div>
-                    <p>
-                        {{ _("Some errors occurred and the dashboard could not
-                        be connected") }}
-                    </p>
+                    <p>{{ _("Some errors occurred and the dashboard could not be connected") }}</p>
                 </div>
                 <div class="sections error-container" id="bot-not-found">
-                    <img
-                        src="{{ url_for('static', filename='img/not-found.svg') }}"
-                        alt
-                    />
+                    <img src="{{ url_for('static', filename='img/not-found.svg') }}" alt />
                     <div class="message">
                         <h3>{{ _("Can't Find You on Discord") }}</h3>
                         <p>
-                            {{ _("I'm unable to locate you in any Discord
-                            server. Please check that you've invited our bot and
-                            granted it the necessary permissions to access your
-                            server information.") }}
+                            {{ _("I'm unable to locate you in any Discord server. Please check that you've invited our bot and granted it the necessary
+                            permissions to access your server information.") }}
                         </p>
                     </div>
                     <a href=".">
@@ -444,17 +256,12 @@
                     </a>
                 </div>
                 <div class="sections error-container" id="no-history-found">
-                    <img
-                        src="{{ url_for('static', filename='img/no-history.svg') }}"
-                        alt
-                    />
+                    <img src="{{ url_for('static', filename='img/no-history.svg') }}" alt />
                     <div class="message">
                         <h3>{{ _("No Hisotry Searches Found") }}</h3>
                         <p>
-                            {{ _("It seems like you haven’t searched for any
-                            songs yet. No worries, your musical journey can
-                            start right now! Simply enter the name of your
-                            favorite song or artist in the search bar.") }}
+                            {{ _("It seems like you haven't searched for any songs yet. No worries, your musical journey can start right now! Simply enter the
+                            name of your favorite song or artist in the search bar.") }}
                         </p>
                     </div>
                     <div class="reload-btn" id="focus-search-query">
@@ -462,16 +269,12 @@
                     </div>
                 </div>
                 <div class="sections error-container" id="no-server-found">
-                    <img
-                        src="{{ url_for('static', filename='img/no-servers.svg') }}"
-                        alt
-                    />
+                    <img src="{{ url_for('static', filename='img/no-servers.svg') }}" alt />
                     <div class="message">
                         <h3>{{ _("Server Not Detected") }}</h3>
                         <p>
-                            {{ _("Ensure that I’m added to your server. Please
-                            note, you must possess ‘Manage Guild’ permissions on
-                            the server you wish to manage.") }}
+                            {{ _("Ensure that I'm added to your server. Please note, you must possess 'Manage Guild' permissions on the server you wish to
+                            manage.") }}
                         </p>
                     </div>
                     <div class="reload-btn" id="reload-settings-page-btn">
@@ -479,30 +282,19 @@
                     </div>
                 </div>
                 <div class="sections error-container" id="no-lyrics-found">
-                    <img
-                        src="{{ url_for('static', filename='img/no-history.svg') }}"
-                        alt
-                    />
+                    <img src="{{ url_for('static', filename='img/no-history.svg') }}" alt />
                     <div class="message">
                         <h3>{{ _("Lyrics Not Found") }}</h3>
-                        <p>
-                            {{ _("Sorry, but I’m unable to search for the lyrics
-                            of this song. Please try searching online.") }}
-                        </p>
+                        <p>{{ _("Sorry, but I'm unable to search for the lyrics of this song. Please try searching online.") }}</p>
                     </div>
                 </div>
                 <div class="sections error-container" id="rate-limited">
-                    <img
-                        src="{{ url_for('static', filename='img/rate-limited.svg') }}"
-                        alt
-                    />
+                    <img src="{{ url_for('static', filename='img/rate-limited.svg') }}" alt />
                     <div class="message">
                         <h3>{{ _("Temporary Access Limit Reached") }}</h3>
                         <p>
-                            {{ _("It appears you’ve been quite active and have
-                            reached the limit for requests. Don’t worry, this is
-                            only temporary. You’ll be able to continue your
-                            activities after a short break.") }}
+                            {{ _("It appears you've been quite active and have reached the limit for requests. Don't worry, this is only temporary. You'll be
+                            able to continue your activities after a short break.") }}
                         </p>
                     </div>
                     <a href=".">
@@ -535,22 +327,13 @@
                     <div class="section">
                         <div class="header">
                             <div class="sub-title">
-                                <p>
-                                    {{ _("Based on your song playback history")
-                                    }}
-                                </p>
+                                <p>{{ _("Based on your song playback history") }}</p>
                                 <h2>{{ _("Recommendation for today") }}</h2>
                             </div>
                         </div>
-                        <div
-                            class="card-container recommendation-tracks"
-                            id="recommendation-tracks"
-                        ></div>
+                        <div class="card-container recommendation-tracks" id="recommendation-tracks"></div>
                         <div class="center">
-                            <div
-                                class="loader"
-                                id="recommendation-tracks-loader"
-                            ></div>
+                            <div class="loader" id="recommendation-tracks-loader"></div>
                         </div>
                     </div>
                     {% include "footer.html" %}
@@ -577,67 +360,30 @@
                             {% endfor %}
                         </div>
                     </div>
-                    <!-- <div class="section">
-                    <div class="header">
-                        <div class="sub-title">
-                            <p>{{ _("Discover music for every mood") }}</p>
-                            <h2>{{ _("Genres and Moods") }}</h2>
-                        </div>
-                    </div>
-                    <div class="card-container" id="category-playlists">
-                        {% for i in range(10) %}
-                        <div class="card skeleton">
-                            <div class="thumbnail">
-                                <img alt>
-                            </div>
-                            <div class="track-info">
-                                <p class="title"></p>
-                                <p class="description"></p>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div> -->
                     {% include "footer.html" %}
                 </div>
                 <div class="sections" id="user-settings-page">
                     <div class="section">
                         <div class="header">
                             <div class="sub-title">
-                                <p>
-                                    {{ _("Manage your account settings and
-                                    preferences") }}
-                                </p>
+                                <p>{{ _("Manage your account settings and preferences") }}</p>
                                 <h2>{{ _("Settings") }}</h2>
                             </div>
                         </div>
                         <div class="settings-row">
                             <div class="info">
                                 <h3 class="title">{{ _('Language') }}</h3>
-                                <p class="desc">
-                                    Default language for public dashboard.
-                                </p>
+                                <p class="desc">{{ _("Default language for public dashboard.") }}</p>
                             </div>
                             <div class="select-container">
                                 <div class="selected-container">
-                                    <p>
-                                        {{
-                                        languages.get(session.get('language_code',
-                                        user.language_code), {}).get('name', '')
-                                        }}
-                                    </p>
-                                    <span class="material-symbols-outlined"
-                                        >keyboard_arrow_up</span
-                                    >
+                                    <p>{{ languages.get(session.get('language_code', user.language_code), {}).get('name', '') }}</p>
+                                    <span class="material-symbols-outlined">keyboard_arrow_up</span>
                                 </div>
                                 <div class="options">
                                     {% for key, value in languages.items() %}
-                                    <a
-                                        href="{{ url_for('set_language', language=key) }}"
-                                    >
-                                        <p class="option">
-                                            {{ value["name"] }}
-                                        </p>
+                                    <a href="{{ url_for('set_language', language=key) }}">
+                                        <p class="option">{{ value["name"] }}</p>
                                     </a>
                                     {% endfor %}
                                 </div>
@@ -647,268 +393,29 @@
                             <div class="settings-row">
                                 <div class="info">
                                     <h3 class="title">{{ _('Dark Mode') }}</h3>
-                                    <p class="desc">
-                                        {{ _('Quickly toggle between light and
-                                        dark modes for a personalized.') }}
-                                    </p>
+                                    <p class="desc">{{ _('Quickly toggle between light and dark modes for a personalized.') }}</p>
                                 </div>
                                 <label class="switch">
-                                    <input
-                                        data-id="toggle-dark-mode"
-                                        type="checkbox"
-                                        checked
-                                    />
+                                    <input data-id="toggle-dark-mode" type="checkbox" checked />
                                     <span class="switch-slider"></span>
                                 </label>
                             </div>
                             <div class="color-select-container">
-                                <div
-                                    class="color"
-                                    data-id="purple"
-                                    style="background-color: #8957ff"
-                                ></div>
-                                <div
-                                    class="color"
-                                    data-id="pink"
-                                    style="background-color: #fa8abb"
-                                ></div>
-                                <div
-                                    class="color"
-                                    data-id="red"
-                                    style="background-color: #ff3366"
-                                ></div>
-                                <div
-                                    class="color"
-                                    data-id="yellow"
-                                    style="background-color: #ffbb00"
-                                ></div>
-                                <div
-                                    class="color"
-                                    data-id="blue"
-                                    style="background-color: #02bbff"
-                                ></div>
-                                <div
-                                    class="color"
-                                    data-id="green"
-                                    style="background-color: #00cc88"
-                                ></div>
+                                <div class="color" data-id="purple" style="background-color: #8957ff"></div>
+                                <div class="color" data-id="pink" style="background-color: #fa8abb"></div>
+                                <div class="color" data-id="red" style="background-color: #ff3366"></div>
+                                <div class="color" data-id="yellow" style="background-color: #ffbb00"></div>
+                                <div class="color" data-id="blue" style="background-color: #02bbff"></div>
+                                <div class="color" data-id="green" style="background-color: #00cc88"></div>
                             </div>
                         </div>
                     </div>
                     {% include "footer.html" %}
                 </div>
             </div>
-            <div class="queue-container">
-                <div class="header">
-                    <h3 class="active">{{ _("Queue") }}</h3>
-                    <div class="actions">
-                        <div class="btn">
-                            <span
-                                class="material-symbols-outlined clickable"
-                                id="toggle-history-list"
-                                >history</span
-                            >
-                            <p class="label">{{ _("Toggle History") }}</p>
-                        </div>
-                        <div class="btn active">
-                            <span
-                                class="material-symbols-outlined clickable"
-                                id="toggle-queue-view2"
-                                >close</span
-                            >
-                            <p class="label">{{ _("Close") }}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="scrollbar">
-                    <div
-                        class="section"
-                        id="now-playing-section"
-                        style="display: none"
-                    >
-                        <div class="header">
-                            <h4>{{ _("Now playing") }}</h4>
-                        </div>
-                        <div class="track show">
-                            <div class="left">
-                                <div class="thumbnail">
-                                    <img
-                                        class="track-img"
-                                        id="now-playing-img"
-                                        src
-                                        alt
-                                    />
-                                    <img
-                                        class="requester-img"
-                                        id="now-playing-requester-img"
-                                        src
-                                        alt
-                                    />
-                                </div>
-                                <div class="track-info">
-                                    <p class="title" id="now-playing-title"></p>
-                                    <p
-                                        class="description"
-                                        id="now-playing-description"
-                                    ></p>
-                                </div>
-                            </div>
-                            <span class="material-symbols-outlined clickable"
-                                >more_horiz</span
-                            >
-                        </div>
-                    </div>
-                    <div
-                        class="section"
-                        id="play-next-section"
-                        style="display: none"
-                    >
-                        <div class="header">
-                            <h4>{{ _("Next in queue") }}</h4>
-                            <p id="clear-queue-btn">{{ _("Clear queue") }}</p>
-                        </div>
-                        <div class="queue" id="queue"></div>
-                    </div>
-                    <div
-                        class="section"
-                        id="history-section"
-                        style="display: none"
-                    >
-                        <div class="header">
-                            <h4>{{ _("History queue") }}</h4>
-                            <p id="clear-history-queue-btn">
-                                {{ _("Clear history") }}
-                            </p>
-                        </div>
-                        <div class="queue" id="history-queue"></div>
-                    </div>
-                    <div class="action-bar" id="queue-scroll-to-top">
-                        <span class="material-symbols-outlined"
-                            >keyboard_arrow_up</span
-                        >
-                        <p>{{ _("BACK TO TOP") }}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="control-container">
-                <div class="left" id="control-info">
-                    <img id="controller-img" src alt />
-                    <div class="track-info">
-                        <p class="title" id="controller-title"></p>
-                        <p class="description" id="controller-description"></p>
-                    </div>
-                    <span
-                        class="material-symbols-outlined clickable"
-                        id="like-btn"
-                        >favorite</span
-                    >
-                </div>
-                <div class="center">
-                    <div class="actions">
-                        <div class="btn">
-                            <span
-                                class="material-symbols-outlined clickable filled"
-                                id="rewind-btn"
-                                >fast_rewind</span
-                            >
-                            <p class="label">{{ _("Rewind 10s") }}</p>
-                        </div>
-                        <div class="btn">
-                            <span
-                                class="material-symbols-outlined clickable"
-                                id="shuffle-btn"
-                                >shuffle</span
-                            >
-                            <p class="label">{{ _("Shuffle") }}</p>
-                        </div>
-                        <div class="btn">
-                            <span
-                                class="material-symbols-outlined clickable filled"
-                                id="back-btn"
-                                >skip_previous</span
-                            >
-                            <p class="label">{{ _("Back") }}</p>
-                        </div>
-                        <div class="btn">
-                            <span
-                                class="material-symbols-outlined clickable play_btn filled"
-                                id="play-pause-btn"
-                                >play_circle</span
-                            >
-                            <p class="label">{{ _("Play") }}</p>
-                        </div>
-                        <div class="btn">
-                            <span
-                                class="material-symbols-outlined clickable filled"
-                                id="skip-btn"
-                                >skip_next</span
-                            >
-                            <p class="label">{{ _("Skip") }}</p>
-                        </div>
-                        <div class="btn">
-                            <span
-                                class="material-symbols-outlined clickable"
-                                id="repeat-btn"
-                                >repeat</span
-                            >
-                            <p class="label">{{ _("Repeat") }}</p>
-                        </div>
-                        <div class="btn">
-                            <span
-                                class="material-symbols-outlined clickable filled"
-                                id="forward-btn"
-                                >fast_forward</span
-                            >
-                            <p class="label">{{ _("Forward 10s") }}</p>
-                        </div>
-                    </div>
-                    <div class="position">
-                        <span id="start-time">00:00</span>
-                        <input
-                            type="range"
-                            class="position-bar"
-                            id="position-bar"
-                            min="1"
-                            max="500"
-                            value="0"
-                        />
-                        <span id="end-time">00:00</span>
-                    </div>
-                </div>
-                <div class="right">
-                    <input
-                        type="range"
-                        class="volume-bar"
-                        id="volume-bar"
-                        min="0"
-                        max="100"
-                        value="0"
-                    />
-                    <div class="btn">
-                        <span class="material-symbols-outlined clickable"
-                            >volume_up</span
-                        >
-                        <p class="label">{{ _("Volume") }}</p>
-                    </div>
-                    <div class="btn">
-                        <div id="effect-panel" class="effect-panel"></div>
-                        <span
-                            class="material-symbols-outlined clickable"
-                            id="toggle-effect-panel"
-                            >tune</span
-                        >
-                        <p class="label">{{ _("Effect") }}</p>
-                    </div>
-                    <div class="btn">
-                        <span
-                            class="material-symbols-outlined clickable"
-                            id="toggle-queue-view"
-                            >queue_music</span
-                        >
-                        <p class="label">{{ _("Queue") }}</p>
-                    </div>
-                </div>
-            </div>
+            {% include "queue.html" %}
+            <div id="queue-overlay" class="mobile-overlay"></div>
+            {% include "controller.html" %}
         </div>
     </body>
 </html>
