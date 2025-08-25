@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  2.0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-08-06 10:20+0800\n"
+"POT-Creation-Date: 2025-08-25 16:48+0800\n"
 "PO-Revision-Date: 2025-04-11 22:19+0200\n"
 "Last-Translator: VeeoN2 <media@veeon.pl>\n"
 "Language: pl\n"
@@ -503,8 +503,8 @@ msgid "Toggle Vocard to prevent duplicate songs from queuing."
 msgstr "Zapobiega umieszczaniu zduplikowanych utworów w kolejce"
 
 #: templates/index.html:176
-msgid "Silent Msg"
-msgstr "靜默消息"
+msgid "Silent Message"
+msgstr "Cichy Komunikat"
 
 #: templates/index.html:177
 msgid "Toggle silent messaging to send messages without alerting."
@@ -798,4 +798,7 @@ msgstr "POWRÓT DO GÓRY"
 #: templates/queue.html:55
 msgid "Autoplay"
 msgstr "Autoodtwarzanie"
+
+#~ msgid "Cichy Komunikat"
+#~ msgstr "靜默消息"
 

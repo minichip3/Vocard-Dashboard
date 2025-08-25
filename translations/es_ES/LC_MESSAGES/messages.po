@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-08-06 10:20+0800\n"
+"POT-Creation-Date: 2025-08-25 16:48+0800\n"
 "PO-Revision-Date: 2025-08-05 17:32+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es_ES\n"
@@ -229,11 +229,11 @@ msgstr "Añade más canciones a la cola antes de mezclar."
 
 #: templates/index.html:73
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Atajos de teclado"
 
 #: templates/index.html:74
 msgid "Quick access to common actions"
-msgstr ""
+msgstr "Acceso rápido a acciones comunes"
 
 #: templates/index.html:75 templates/queue.html:12
 msgid "Close"
@@ -245,7 +245,7 @@ msgstr "Donación"
 
 #: templates/index.html:78
 msgid "Playback Controls"
-msgstr ""
+msgstr "Controles de reproducción"
 
 #: templates/index.html:79
 msgid "Queue Management"
@@ -253,15 +253,15 @@ msgstr "Modo de Cola"
 
 #: templates/index.html:82
 msgid "Show keyboard shortcuts"
-msgstr ""
+msgstr "Mostrar atajos de teclado"
 
 #: templates/index.html:83
 msgid "Focus search bar"
-msgstr ""
+msgstr "Enfocar barra de búsqueda"
 
 #: templates/index.html:84
 msgid "Play/Pause"
-msgstr ""
+msgstr "Reproducir/Pausar"
 
 #: templates/index.html:85
 msgid "Forward 10 seconds"
@@ -281,7 +281,7 @@ msgstr "Pista"
 
 #: templates/index.html:89
 msgid "Toggle repeat mode"
-msgstr ""
+msgstr "Alternar modo de repetición"
 
 #: templates/index.html:90
 msgid "Toggle shuffle"
@@ -508,12 +508,12 @@ msgstr ""
 "la cola."
 
 #: templates/index.html:176
-msgid "Silent Msg"
-msgstr ""
+msgid "Silent Message"
+msgstr "Mensaje Silencioso"
 
 #: templates/index.html:177
 msgid "Toggle silent messaging to send messages without alerting."
-msgstr ""
+msgstr "Alternar mensajería silenciosa para enviar mensajes sin alertar."
 
 #: templates/index.html:180
 msgid "Voice Status Template"

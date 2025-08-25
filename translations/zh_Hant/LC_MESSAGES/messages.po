@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-08-06 10:20+0800\n"
+"POT-Creation-Date: 2025-08-25 16:48+0800\n"
 "PO-Revision-Date: 2025-01-11 11:25+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_Hant_HK\n"
@@ -481,7 +481,7 @@ msgid "Toggle Vocard to prevent duplicate songs from queuing."
 msgstr "切換 Vocard 以防止重複歌曲進入隊列。"
 
 #: templates/index.html:176
-msgid "Silent Msg"
+msgid "Silent Message"
 msgstr "靜默消息"
 
 #: templates/index.html:177
