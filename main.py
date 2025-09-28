@@ -73,7 +73,7 @@ def login_required(func):
 
 @app.before_serving
 async def setup():
-    lang_codes = ["en"] + [
+    lang_codes = ["ko"] + [
         lang for lang in os.listdir(os.path.join(ROOT_DIR, "translations"))
         if not lang.startswith(".")
     ]
